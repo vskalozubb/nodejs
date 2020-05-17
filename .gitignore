@@ -1,0 +1,16 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+# All gitignores need to go in this file for the full monorepo - git won't look at .gitignore files nested in the project.
+# If you are transfering a project over from another repo, you will need to add that projects ignores to this file
+
+# dependencies
+node_modules
+
+# test
+coverage
+
+# misc
+.DS_Store
+package-lock.json
+
+# ignore all env files by default except sample files
+.env*

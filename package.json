@@ -1,0 +1,50 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Node.js test project",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx nodemon ./src/app.js --config nodemon.json",
+    "test": "jest --coverage --testPathIgnorePatterns",
+    "eslint": "eslint src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vskalozubb/nodejs.git"
+  },
+  "author": "Vasyl Skalozub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vskalozubb/nodejs/issues"
+  },
+  "homepage": "https://github.com/vskalozubb/nodejs#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "nodemon": "^2.0.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jest": "^26.0.1",
+    "morgan": "^1.10.0",
+    "supertest": "^4.0.2",
+    "swagger": "^0.7.5",
+    "winston": "^3.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "**/* .js": ["npm run eslint"]
+  }
+}
